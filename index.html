@@ -1,0 +1,637 @@
+<!doctype html>
+<html lang="fr" class="scroll-smooth">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Guangz'Up Connect vous accompagne à la Canton Fair 2026 à Guangzhou pour rencontrer des fournisseurs et développer vos achats en Chine.">
+  <meta name="theme-color" content="#11100f">
+  <title>Canton Fair 2026 | Guangz'Up Connect</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='28' fill='%2311100f' stroke='%23e5a36d' stroke-width='3'/%3E%3Cpath d='M16 35 31 17l17 14-12 2-5 15-4-11z' fill='%23c87941'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            ink: '#11100f',
+            coal: '#1a1917',
+            copper: '#c87941',
+            copperLight: '#e5a36d',
+            brick: '#8b2e28',
+            paper: '#f2ece3'
+          },
+          fontFamily: {
+            display: ['Anton', 'Impact', 'sans-serif'],
+            sans: ['Manrope', 'Arial', 'sans-serif']
+          }
+        }
+      }
+    };
+  </script>
+  <style>
+    :root {
+      --ink: #11100f;
+      --coal: #1a1917;
+      --copper: #c87941;
+      --copper-light: #e5a36d;
+      --paper: #f2ece3;
+      --muted: #b8afa5;
+      --brick: #8b2e28;
+    }
+
+    * { box-sizing: border-box; }
+    html { background: var(--ink); }
+    body {
+      margin: 0;
+      color: var(--paper);
+      background: var(--ink);
+      font-family: Manrope, Arial, sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+    body::selection { color: var(--ink); background: var(--copper-light); }
+    a, button, input, select { -webkit-tap-highlight-color: transparent; }
+    :focus-visible { outline: 3px solid var(--copper-light); outline-offset: 4px; }
+
+    .display { font-family: Anton, Impact, sans-serif; font-weight: 400; }
+    .text-balance { text-wrap: balance; }
+    .container-page { width: min(1180px, calc(100% - 2rem)); margin-inline: auto; }
+    .hairline { border-color: rgba(229, 163, 109, .25); }
+
+    .hero {
+      min-height: 100svh;
+      position: relative;
+      isolation: isolate;
+      overflow: hidden;
+      background: #0c0c0c;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      z-index: -3;
+      background-image: url('fond.png');
+      background-size: cover;
+      background-position: 72% 43%;
+      filter: saturate(.84) contrast(1.05);
+      transform: scale(1.02);
+    }
+    .hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      z-index: -2;
+      background:
+        linear-gradient(90deg, rgba(8,8,8,.98) 0%, rgba(8,8,8,.92) 39%, rgba(8,8,8,.45) 67%, rgba(8,8,8,.35) 100%),
+        linear-gradient(0deg, #11100f 0%, transparent 34%);
+    }
+    .hero-title {
+      font-size: clamp(3.25rem, 6.3vw, 5.9rem);
+      line-height: .96;
+      letter-spacing: -.018em;
+      max-width: 760px;
+    }
+    .hero-title span { color: var(--copper-light); }
+    .hero-copy {
+      max-width: 780px;
+      margin-left: clamp(1rem, 7vw, 7rem);
+    }
+
+    .brand-mark {
+      width: 42px;
+      aspect-ratio: 1;
+      position: relative;
+      border: 1px solid rgba(229, 163, 109, .65);
+      border-radius: 50%;
+    }
+    .brand-mark::before,
+    .brand-mark::after {
+      content: '';
+      position: absolute;
+      inset: 8px 3px;
+      border: 1px solid var(--copper-light);
+      border-radius: 50%;
+      transform: rotate(45deg);
+    }
+    .brand-mark::after { transform: rotate(-45deg); }
+
+    .cta-primary,
+    .cta-secondary {
+      min-height: 54px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: .7rem;
+      padding: .95rem 1.25rem;
+      border-radius: 10px;
+      font-size: .88rem;
+      font-weight: 800;
+      transition: transform .25s ease, background-color .25s ease, color .25s ease, box-shadow .25s ease;
+    }
+    .cta-primary { color: #17110d; background: var(--copper-light); box-shadow: 0 14px 30px rgba(0, 0, 0, .2); }
+    .cta-primary:hover { background: #f2b27b; transform: translateY(-2px); box-shadow: 0 18px 35px rgba(0, 0, 0, .3); }
+    .cta-secondary { color: var(--paper); border: 1px solid rgba(242,236,227,.34); background: rgba(17,16,15,.54); }
+    .cta-secondary:hover { border-color: var(--copper-light); color: var(--copper-light); transform: translateY(-2px); }
+
+    .deadline {
+      background: var(--brick);
+      border: 1px solid rgba(255,255,255,.08);
+      box-shadow: 0 10px 30px rgba(0,0,0,.25);
+    }
+    .section-pad { padding-block: clamp(5rem, 9vw, 8rem); }
+    .section-title {
+      font-family: Anton, Impact, sans-serif;
+      font-weight: 400;
+      font-size: clamp(2.8rem, 6vw, 5rem);
+      line-height: .96;
+      letter-spacing: -.012em;
+      text-wrap: balance;
+    }
+    .section-kicker { color: var(--copper-light); font-size: .78rem; font-weight: 800; letter-spacing: .16em; text-transform: uppercase; }
+
+    .pain-statement {
+      border-top: 1px solid rgba(229,163,109,.28);
+      display: grid;
+      grid-template-columns: 56px 1fr;
+      gap: 1.2rem;
+      padding-block: 1.5rem;
+    }
+    .pain-statement:last-child { border-bottom: 1px solid rgba(229,163,109,.28); }
+    .pain-number { color: var(--copper-light); font-size: .8rem; font-weight: 800; padding-top: .25rem; }
+
+    .bridge-panel {
+      position: relative;
+      background: var(--paper);
+      color: var(--ink);
+      overflow: hidden;
+    }
+    .route-line {
+      height: 1px;
+      flex: 1;
+      min-width: 28px;
+      background: rgba(17,16,15,.25);
+      position: relative;
+    }
+    .route-line::after {
+      content: '';
+      width: 7px;
+      height: 7px;
+      border-top: 1px solid var(--ink);
+      border-right: 1px solid var(--ink);
+      position: absolute;
+      right: 0;
+      top: -3px;
+      transform: rotate(45deg);
+    }
+
+    .phase-grid { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid rgba(229,163,109,.28); }
+    .phase {
+      min-height: 430px;
+      padding: 2rem;
+      border-right: 1px solid rgba(229,163,109,.28);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: background-color .25s ease;
+    }
+    .phase:first-child { border-left: 1px solid rgba(229,163,109,.28); }
+    .phase:hover { background: rgba(200,121,65,.07); }
+    .phase-number { font-family: Anton, Impact, sans-serif; font-size: 7rem; line-height: .8; color: rgba(229,163,109,.15); }
+    .sector-list li { padding-block: .65rem; border-top: 1px solid rgba(242,236,227,.12); }
+
+    .offers-wrap { display: grid; grid-template-columns: .88fr 1.12fr; align-items: start; gap: clamp(1.2rem, 3vw, 2.5rem); }
+    .offer {
+      position: relative;
+      background: #171614;
+      border: 1px solid rgba(229,163,109,.3);
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 22px 60px rgba(0,0,0,.28);
+    }
+    .offer.featured { border-color: var(--copper-light); transform: translateY(-1.5rem); }
+    .offer-image { width: 100%; display: block; aspect-ratio: 1 / 1; object-fit: cover; }
+    .offer-body { padding: clamp(1.25rem, 3vw, 2rem); }
+    .offer-price { font-family: Anton, Impact, sans-serif; font-size: clamp(2.7rem, 5vw, 4.2rem); line-height: 1; color: var(--copper-light); }
+    .offer-check { display: flex; gap: .7rem; padding-block: .55rem; color: #ded7ce; font-size: .9rem; }
+    .offer-check::before { content: '✓'; color: var(--copper-light); font-weight: 800; }
+    .recommended { position: absolute; z-index: 2; top: 1rem; right: 1rem; padding: .55rem .8rem; border-radius: 999px; color: var(--ink); background: var(--copper-light); font-size: .68rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
+
+    .trust-placeholder {
+      min-height: 300px;
+      border: 1px dashed rgba(229,163,109,.48);
+      background: rgba(200,121,65,.05);
+      display: grid;
+      place-items: center;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .faq-item { border-top: 1px solid rgba(229,163,109,.28); }
+    .faq-item:last-child { border-bottom: 1px solid rgba(229,163,109,.28); }
+    .faq-button { width: 100%; min-height: 74px; display: flex; align-items: center; justify-content: space-between; gap: 1rem; text-align: left; font-weight: 700; }
+    .faq-icon { color: var(--copper-light); font-size: 1.4rem; transition: transform .25s ease; }
+    .faq-answer { display: grid; grid-template-rows: 0fr; transition: grid-template-rows .32s ease; }
+    .faq-answer > div { overflow: hidden; }
+    .faq-item.open .faq-answer { grid-template-rows: 1fr; }
+    .faq-item.open .faq-icon { transform: rotate(45deg); }
+
+    .form-field {
+      width: 100%;
+      min-height: 54px;
+      border: 1px solid rgba(17,16,15,.22);
+      border-radius: 10px;
+      color: var(--ink);
+      background: #fffdfa;
+      padding: .8rem 1rem;
+      font-size: 16px;
+    }
+    .form-field:focus { border-color: var(--copper); outline: 3px solid rgba(200,121,65,.2); }
+    .form-label { display: block; margin-bottom: .45rem; color: #38322c; font-size: .78rem; font-weight: 800; }
+
+    .reveal { opacity: 1; transform: none; }
+    .mobile-cta { display: none; }
+
+    @media (max-width: 900px) {
+      .hero::before { background-position: 62% center; opacity: .75; }
+      .hero::after { background: linear-gradient(90deg, rgba(8,8,8,.97) 0%, rgba(8,8,8,.82) 72%, rgba(8,8,8,.52) 100%), linear-gradient(0deg, #11100f 0%, transparent 35%); }
+      .phase-grid { grid-template-columns: 1fr; }
+      .phase { min-height: auto; gap: 3rem; border-left: 1px solid rgba(229,163,109,.28); border-bottom: 1px solid rgba(229,163,109,.28); }
+      .phase-number { font-size: 5rem; }
+      .offers-wrap { grid-template-columns: 1fr 1fr; }
+      .offer.featured { transform: none; }
+    }
+
+    @media (max-width: 680px) {
+      .container-page { width: min(100% - 1.25rem, 1180px); }
+      .hero { min-height: 820px; }
+      .hero::before { background-position: 66% 45%; opacity: .64; }
+      .hero::after { background: linear-gradient(180deg, rgba(8,8,8,.7) 0%, rgba(8,8,8,.58) 28%, rgba(8,8,8,.92) 64%, #11100f 100%); }
+      .hero-title {
+        font-size: clamp(2.9rem, 12.2vw, 3.8rem);
+        line-height: .98;
+      }
+      .hero-copy { margin-left: .75rem; }
+      .section-pad { padding-block: 4.5rem; }
+      .section-title { font-size: clamp(2.65rem, 13vw, 4rem); }
+      .offers-wrap { grid-template-columns: 1fr; }
+      .pain-statement { grid-template-columns: 38px 1fr; }
+      .offer-image { aspect-ratio: 1 / 1; }
+      .mobile-cta {
+        display: block;
+        position: fixed;
+        z-index: 30;
+        left: .65rem;
+        right: .65rem;
+        bottom: .65rem;
+      }
+      .mobile-cta a { width: 100%; box-shadow: 0 12px 30px rgba(0,0,0,.5); }
+      footer { padding-bottom: 6.5rem !important; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; }
+      .reveal { opacity: 1; transform: none; }
+    }
+  </style>
+</head>
+<body>
+  <!--
+    THESIS: Transformer une visite en Chine en parcours commercial lisible; refuser la landing de voyage générique.
+    OWN-WORLD: Anthracite nocturne, cuivre solaire, typographie d'affiche massive, lignes de trajet fines.
+    STORY: Identifier le coût de l'improvisation, comprendre l'accompagnement, choisir une formule, démarrer la conversation.
+    FIRST VIEWPORT: Skyline issue de l'affiche à droite, promesse business monumentale à gauche, date limite et CTA visibles.
+    FORM: Carnet de route commercial, alternant densité éditoriale et respirations, construit depuis les affiches validées.
+  -->
+
+  <svg aria-hidden="true" width="0" height="0" style="position:absolute">
+    <symbol id="arrow" viewBox="0 0 24 24"><path d="M5 12h14m-5-5 5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="phone" viewBox="0 0 24 24"><path d="M7.2 3.5 4.9 5.8c-1.1 1.1.1 4.7 3.6 8.2s7.1 4.7 8.2 3.6l2.3-2.3-3.5-3.1-1.8 1.8c-1.3-.3-3.4-2.4-3.7-3.7l1.8-1.8-3.1-3.5Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></symbol>
+    <symbol id="check" viewBox="0 0 24 24"><path d="m5 12 4.5 4.5L19 7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  </svg>
+
+  <header class="absolute inset-x-0 top-0 z-20">
+    <div class="container-page flex items-center justify-between border-b hairline py-4">
+      <a href="#top" class="flex items-center gap-3" aria-label="Guangz'Up Connect, retour en haut">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span class="leading-none">
+          <strong class="block text-base tracking-wide">GUANGZ'<span class="text-copperLight">UP</span></strong>
+          <span class="text-[9px] tracking-[.42em] text-stone-300">CONNECT</span>
+        </span>
+      </a>
+      <nav class="hidden items-center gap-7 text-xs font-bold md:flex" aria-label="Navigation principale">
+        <a class="transition-colors hover:text-copperLight" href="#phases">Les phases</a>
+        <a class="transition-colors hover:text-copperLight" href="#offres">Les formules</a>
+        <a class="transition-colors hover:text-copperLight" href="#faq">FAQ</a>
+      </nav>
+      <a class="hidden text-sm font-extrabold text-copperLight sm:block" href="tel:+2290196902553">+229 01 96 90 25 53</a>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero flex items-end pb-12 pt-32 md:items-center md:pb-16 md:pt-40">
+      <div class="container-page w-full">
+        <div class="hero-copy">
+          <div class="deadline mb-6 inline-flex items-center gap-3 rounded-lg px-3 py-2 text-xs font-extrabold">
+            <span class="h-2 w-2 rounded-full bg-white" aria-hidden="true"></span>
+            Inscriptions avant le 10 septembre 2026
+          </div>
+          <h1 class="hero-title display text-balance uppercase">Revenez de Chine avec de <span>vrais leviers</span> de croissance.</h1>
+          <p class="mt-6 max-w-xl text-base leading-relaxed text-stone-200 md:text-lg">Accédez à la Canton Fair de Guangzhou avec un accompagnement pensé pour rencontrer des fournisseurs, mieux négocier et structurer vos achats.</p>
+          <p class="mt-3 text-sm font-bold text-copperLight">Départ dès le 13 octobre 2026 · Guangzhou, Chine</p>
+          <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+            <a class="cta-primary" href="https://wa.me/2290196902553?text=Bonjour%20Guangz%27Up%20Connect%2C%20je%20souhaite%20recevoir%20le%20programme%20Canton%20Fair%202026." target="_blank" rel="noopener">
+              Recevoir le programme
+              <svg class="h-5 w-5" aria-hidden="true"><use href="#arrow"></use></svg>
+            </a>
+            <a class="cta-secondary" href="#offres">Comparer les 2 formules</a>
+          </div>
+          <p class="mt-4 text-xs text-stone-400">Premier échange sans engagement · Contact direct par WhatsApp</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-pad bg-ink" aria-labelledby="pain-title">
+      <div class="container-page grid gap-12 lg:grid-cols-[.92fr_1.08fr] lg:gap-20">
+        <div class="reveal">
+          <p class="section-kicker">Le vrai coût de l'improvisation</p>
+          <h2 id="pain-title" class="section-title mt-4">Importer ne devrait pas être un pari.</h2>
+          <p class="mt-6 max-w-lg leading-relaxed text-stone-400">Sans accès direct au terrain et sans interlocuteur fiable, une bonne opportunité peut rapidement devenir une suite de décisions coûteuses.</p>
+        </div>
+        <div class="reveal">
+          <article class="pain-statement">
+            <span class="pain-number">01</span>
+            <div><h3 class="text-lg font-extrabold">Des intermédiaires difficiles à vérifier</h3><p class="mt-2 text-sm leading-relaxed text-stone-400">Vous avancez sans toujours savoir qui fabrique, qui revend et où se situe la marge réelle.</p></div>
+          </article>
+          <article class="pain-statement">
+            <span class="pain-number">02</span>
+            <div><h3 class="text-lg font-extrabold">Des négociations sans repères locaux</h3><p class="mt-2 text-sm leading-relaxed text-stone-400">Prix, quantités, qualité et délais deviennent plus difficiles à défendre à distance.</p></div>
+          </article>
+          <article class="pain-statement">
+            <span class="pain-number">03</span>
+            <div><h3 class="text-lg font-extrabold">Du temps et du capital exposés</h3><p class="mt-2 text-sm leading-relaxed text-stone-400">Une mauvaise sélection de fournisseur peut immobiliser votre trésorerie et ralentir votre activité.</p></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="bridge-panel section-pad" aria-labelledby="solution-title">
+      <div class="container-page">
+        <div class="grid gap-10 lg:grid-cols-[1fr_.8fr] lg:items-end">
+          <div class="reveal">
+            <p class="text-xs font-extrabold uppercase tracking-[.16em] text-[#9c5427]">Le pont Guangz'Up Connect</p>
+            <h2 id="solution-title" class="section-title mt-4 max-w-3xl">Vous ne partez pas seulement voir. Vous partez pour avancer.</h2>
+          </div>
+          <p class="reveal max-w-xl leading-relaxed text-stone-600">Notre rôle est de rendre le parcours plus lisible, du besoin initial jusqu'aux décisions d'achat et de logistique, avec un accompagnement sur place.</p>
+        </div>
+
+        <div class="mt-16 flex items-center gap-2 overflow-x-auto pb-4" aria-label="Parcours d'accompagnement">
+          <div class="min-w-max text-center"><span class="display text-2xl text-[#9c5427]">SOURCING</span><small class="mt-1 block text-[10px] font-bold uppercase tracking-wider text-stone-500">Cibler le besoin</small></div>
+          <span class="route-line"></span>
+          <div class="min-w-max text-center"><span class="display text-2xl text-[#9c5427]">FOURNISSEURS</span><small class="mt-1 block text-[10px] font-bold uppercase tracking-wider text-stone-500">Rencontrer</small></div>
+          <span class="route-line"></span>
+          <div class="min-w-max text-center"><span class="display text-2xl text-[#9c5427]">NÉGOCIATION</span><small class="mt-1 block text-[10px] font-bold uppercase tracking-wider text-stone-500">Comparer</small></div>
+          <span class="route-line"></span>
+          <div class="min-w-max text-center"><span class="display text-2xl text-[#9c5427]">ACHAT</span><small class="mt-1 block text-[10px] font-bold uppercase tracking-wider text-stone-500">Décider</small></div>
+          <span class="route-line"></span>
+          <div class="min-w-max text-center"><span class="display text-2xl text-[#9c5427]">LOGISTIQUE</span><small class="mt-1 block text-[10px] font-bold uppercase tracking-wider text-stone-500">Organiser</small></div>
+        </div>
+
+        <div class="mt-14 grid gap-px bg-stone-300 md:grid-cols-2 lg:grid-cols-4">
+          <div class="bg-paper p-6"><span class="display text-4xl text-[#9c5427]">01</span><h3 class="mt-8 font-extrabold">Voir les produits en réel</h3><p class="mt-2 text-sm leading-relaxed text-stone-600">Évaluer l'offre au-delà d'un catalogue ou d'une photo reçue à distance.</p></div>
+          <div class="bg-paper p-6"><span class="display text-4xl text-[#9c5427]">02</span><h3 class="mt-8 font-extrabold">Multiplier les contacts</h3><p class="mt-2 text-sm leading-relaxed text-stone-600">Concentrer de nombreuses rencontres fournisseurs pendant un même voyage.</p></div>
+          <div class="bg-paper p-6"><span class="display text-4xl text-[#9c5427]">03</span><h3 class="mt-8 font-extrabold">Comparer avant de choisir</h3><p class="mt-2 text-sm leading-relaxed text-stone-600">Mettre plusieurs propositions en perspective avant de vous engager.</p></div>
+          <div class="bg-paper p-6"><span class="display text-4xl text-[#9c5427]">04</span><h3 class="mt-8 font-extrabold">Être accompagné</h3><p class="mt-2 text-sm leading-relaxed text-stone-600">Avancer sur place avec Guangz'Up Connect tout au long du séjour.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="phases" class="section-pad bg-coal" aria-labelledby="phases-title">
+      <div class="container-page">
+        <div class="mb-14 grid gap-8 lg:grid-cols-[1fr_.7fr] lg:items-end">
+          <div class="reveal">
+            <p class="section-kicker">Comprendre la Canton Fair</p>
+            <h2 id="phases-title" class="section-title mt-4">Trois phases. Des secteurs différents.</h2>
+          </div>
+          <p class="reveal text-sm leading-relaxed text-stone-400">Les dates de salon et familles de produits ci-dessous suivent le calendrier habituel de l'édition d'automne. Le programme détaillé 2026 vous sera confirmé avant l'inscription.</p>
+        </div>
+
+        <div class="phase-grid reveal">
+          <article class="phase">
+            <div class="flex items-start justify-between gap-4"><span class="phase-number">1</span><span class="rounded-full bg-copper px-3 py-2 text-[10px] font-extrabold text-ink">15–19 OCT.</span></div>
+            <div>
+              <h3 class="display text-3xl text-copperLight">TECHNOLOGIE & INDUSTRIE</h3>
+              <ul class="sector-list mt-5 text-sm text-stone-300"><li>Électronique et électroménager</li><li>Équipements industriels</li><li>Véhicules, pièces et outillage</li></ul>
+            </div>
+          </article>
+          <article class="phase">
+            <div class="flex items-start justify-between gap-4"><span class="phase-number">2</span><span class="rounded-full bg-copper px-3 py-2 text-[10px] font-extrabold text-ink">23–27 OCT.</span></div>
+            <div>
+              <h3 class="display text-3xl text-copperLight">MAISON & AMÉNAGEMENT</h3>
+              <ul class="sector-list mt-5 text-sm text-stone-300"><li>Mobilier et décoration</li><li>Matériaux de construction</li><li>Articles ménagers et cadeaux</li></ul>
+            </div>
+          </article>
+          <article class="phase">
+            <div class="flex items-start justify-between gap-4"><span class="phase-number">3</span><span class="rounded-full bg-copper px-3 py-2 text-[10px] font-extrabold text-ink">31 OCT.–4 NOV.</span></div>
+            <div>
+              <h3 class="display text-3xl text-copperLight">MODE & BIENS DE CONSOMMATION</h3>
+              <ul class="sector-list mt-5 text-sm text-stone-300"><li>Textile, vêtements et chaussures</li><li>Produits de santé et soins</li><li>Alimentaire, loisirs et bureau</li></ul>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="offres" class="section-pad bg-ink" aria-labelledby="offres-title">
+      <div class="container-page">
+        <div class="mb-16 max-w-3xl reveal">
+          <p class="section-kicker">Choisissez votre immersion</p>
+          <h2 id="offres-title" class="section-title mt-4">Deux formats. Une même ambition.</h2>
+          <p class="mt-5 text-stone-400">Les deux formules incluent le vol, l'hôtel, le visa et l'accompagnement, conformément aux affiches officielles.</p>
+        </div>
+
+        <div class="offers-wrap">
+          <article class="offer reveal">
+            <img class="offer-image" src="option01.png" width="768" height="768" alt="Affiche de l'Option 01, du 13 au 28 octobre 2026, phases 1 et 2, à 2 600 000 FCFA par personne">
+            <div class="offer-body">
+              <div class="flex items-start justify-between gap-4"><div><p class="text-xs font-extrabold uppercase tracking-[.16em] text-copperLight">Option 01</p><h3 class="mt-2 text-xl font-extrabold">L'essentiel en 16 jours</h3></div><span class="text-right text-xs leading-relaxed text-stone-400">13–28<br>octobre</span></div>
+              <p class="offer-price mt-6">2.600.000 <small class="font-sans text-sm font-extrabold">FCFA</small></p>
+              <p class="mt-1 text-xs text-stone-500">par personne</p>
+              <div class="my-6 h-px bg-white/10"></div>
+              <p class="offer-check">Phases 1 et 2 de la Canton Fair</p>
+              <p class="offer-check">Vol aller-retour</p>
+              <p class="offer-check">Hôtel et visa</p>
+              <p class="offer-check">Accompagnement Guangz'Up Connect</p>
+              <a class="cta-secondary mt-6 w-full" href="https://wa.me/2290196902553?text=Bonjour%2C%20je%20suis%20int%C3%A9ress%C3%A9%28e%29%20par%20l%27Option%2001%20%C3%A0%202.600.000%20FCFA.%20Pouvez-vous%20m%27envoyer%20le%20programme%20d%C3%A9taill%C3%A9%20%3F" target="_blank" rel="noopener">Choisir l'Option 01</a>
+            </div>
+          </article>
+
+          <article class="offer featured reveal">
+            <span class="recommended">Le plus complet</span>
+            <img class="offer-image" src="option02.png" width="768" height="768" alt="Affiche de l'Option 02, du 13 octobre au 13 novembre 2026, phases 1, 2 et 3, à 3 700 000 FCFA par personne">
+            <div class="offer-body">
+              <div class="flex items-start justify-between gap-4"><div><p class="text-xs font-extrabold uppercase tracking-[.16em] text-copperLight">Option 02</p><h3 class="mt-2 text-xl font-extrabold">L'expérience complète en 32 jours</h3></div><span class="text-right text-xs leading-relaxed text-stone-400">13 oct.–<br>13 nov.</span></div>
+              <p class="offer-price mt-6">3.700.000 <small class="font-sans text-sm font-extrabold">FCFA</small></p>
+              <p class="mt-1 text-xs text-stone-500">par personne</p>
+              <div class="my-6 h-px bg-white/10"></div>
+              <p class="offer-check">Phases 1, 2 et 3 de la Canton Fair</p>
+              <p class="offer-check">Vol aller-retour</p>
+              <p class="offer-check">Hôtel et visa</p>
+              <p class="offer-check">Accompagnement Guangz'Up Connect</p>
+              <a class="cta-primary mt-6 w-full" href="https://wa.me/2290196902553?text=Bonjour%2C%20je%20suis%20int%C3%A9ress%C3%A9%28e%29%20par%20l%27Option%2002%20%C3%A0%203.700.000%20FCFA.%20Pouvez-vous%20m%27envoyer%20le%20programme%20d%C3%A9taill%C3%A9%20%3F" target="_blank" rel="noopener">Choisir l'Option 02 <svg class="h-5 w-5" aria-hidden="true"><use href="#arrow"></use></svg></a>
+            </div>
+          </article>
+        </div>
+
+        <div class="mt-12 border border-white/10 bg-white/[.025] p-6 md:p-8 reveal">
+          <div class="grid gap-7 md:grid-cols-[.7fr_1.3fr] md:items-start">
+            <div><p class="section-kicker">Transparence</p><h3 class="mt-3 text-xl font-extrabold">Ce qui doit être précisé dans le devis</h3></div>
+            <div class="grid gap-4 text-sm text-stone-300 sm:grid-cols-2">
+              <p class="flex gap-3"><span class="text-copperLight">○</span> Conditions et procédure en cas de refus de visa</p>
+              <p class="flex gap-3"><span class="text-copperLight">○</span> Type de chambre et conditions d'hébergement</p>
+              <p class="flex gap-3"><span class="text-copperLight">○</span> Modalités de paiement et échéancier éventuel</p>
+              <p class="flex gap-3"><span class="text-copperLight">○</span> Coûts et périmètre du transport de marchandises</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-pad bg-[#151412]" aria-labelledby="trust-title">
+      <div class="container-page">
+        <div class="grid gap-10 lg:grid-cols-[.9fr_1.1fr] lg:gap-16">
+          <div class="reveal">
+            <p class="section-kicker">La confiance se vérifie</p>
+            <h2 id="trust-title" class="section-title mt-4">Échangez avant de vous engager.</h2>
+            <p class="mt-6 max-w-lg leading-relaxed text-stone-400">Avant toute inscription, demandez le programme détaillé et un devis nominatif précisant les prestations, les conditions et les étapes du voyage.</p>
+            <a class="cta-secondary mt-8" href="tel:+2290196902553"><svg class="h-5 w-5" aria-hidden="true"><use href="#phone"></use></svg> Appeler le +229 01 96 90 25 53</a>
+          </div>
+          <div class="trust-placeholder reveal">
+            <div class="max-w-sm">
+              <span class="display text-5xl text-copperLight">PREUVES TERRAIN</span>
+              <p class="mt-4 text-sm leading-relaxed text-stone-400">[Photos réelles de participants, visites ou rencontres fournisseurs à ajouter ici]</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-12 grid gap-px bg-white/10 md:grid-cols-3 reveal">
+          <div class="bg-[#151412] p-6"><p class="text-xs font-extrabold uppercase tracking-wider text-copperLight">Téléphone / WhatsApp</p><a class="mt-3 block font-extrabold hover:text-copperLight" href="tel:+2290196902553">+229 01 96 90 25 53</a></div>
+          <div class="bg-[#151412] p-6"><p class="text-xs font-extrabold uppercase tracking-wider text-copperLight">Adresse</p><p class="mt-3 text-sm text-stone-400">[Adresse complète à Cotonou à ajouter]</p></div>
+          <div class="bg-[#151412] p-6"><p class="text-xs font-extrabold uppercase tracking-wider text-copperLight">Email</p><p class="mt-3 text-sm text-stone-400">[Adresse email à ajouter]</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq" class="section-pad bg-paper text-ink" aria-labelledby="faq-title">
+      <div class="container-page grid gap-12 lg:grid-cols-[.7fr_1.3fr] lg:gap-20">
+        <div class="reveal">
+          <p class="text-xs font-extrabold uppercase tracking-[.16em] text-[#9c5427]">Questions avant départ</p>
+          <h2 id="faq-title" class="section-title mt-4">Décidez avec toutes les informations.</h2>
+        </div>
+        <div class="reveal">
+          <article class="faq-item open">
+            <button class="faq-button" type="button" aria-expanded="true"><span>Le vol, l'hôtel et le visa sont-ils inclus ?</span><span class="faq-icon" aria-hidden="true">+</span></button>
+            <div class="faq-answer"><div><p class="pb-6 pr-8 text-sm leading-relaxed text-stone-600">Oui. Les affiches des Options 01 et 02 indiquent que le vol, l'hôtel, le visa et l'accompagnement sont inclus.</p></div></div>
+          </article>
+          <article class="faq-item">
+            <button class="faq-button" type="button" aria-expanded="false"><span>Que se passe-t-il si mon visa est refusé ?</span><span class="faq-icon" aria-hidden="true">+</span></button>
+            <div class="faq-answer"><div><p class="pb-6 pr-8 text-sm leading-relaxed text-stone-600">Les conditions de remboursement ou de report ne sont pas précisées dans les informations disponibles. Elles doivent figurer dans le devis et vous seront communiquées avant votre inscription.</p></div></div>
+          </article>
+          <article class="faq-item">
+            <button class="faq-button" type="button" aria-expanded="false"><span>Le transport de mes marchandises est-il compris ?</span><span class="faq-icon" aria-hidden="true">+</span></button>
+            <div class="faq-answer"><div><p class="pb-6 pr-8 text-sm leading-relaxed text-stone-600">L'accompagnement est inclus, mais le coût du transport de marchandises n'est pas confirmé comme inclus. Son périmètre et sa tarification seront précisés selon votre projet.</p></div></div>
+          </article>
+          <article class="faq-item">
+            <button class="faq-button" type="button" aria-expanded="false"><span>Combien de personnes partagent une chambre ?</span><span class="faq-icon" aria-hidden="true">+</span></button>
+            <div class="faq-answer"><div><p class="pb-6 pr-8 text-sm leading-relaxed text-stone-600">Le type d'occupation des chambres n'est pas indiqué sur les affiches. Cette information vous sera communiquée avec le programme détaillé.</p></div></div>
+          </article>
+          <article class="faq-item">
+            <button class="faq-button" type="button" aria-expanded="false"><span>Puis-je payer en plusieurs fois ?</span><span class="faq-icon" aria-hidden="true">+</span></button>
+            <div class="faq-answer"><div><p class="pb-6 pr-8 text-sm leading-relaxed text-stone-600">Les modalités de paiement ne sont pas encore précisées. Contactez Guangz'Up Connect pour connaître l'échéancier disponible, le cas échéant.</p></div></div>
+          </article>
+          <article class="faq-item">
+            <button class="faq-button" type="button" aria-expanded="false"><span>Quelle formule choisir ?</span><span class="faq-icon" aria-hidden="true">+</span></button>
+            <div class="faq-answer"><div><p class="pb-6 pr-8 text-sm leading-relaxed text-stone-600">L'Option 01 couvre les phases 1 et 2 sur 16 jours. L'Option 02 couvre les trois phases sur 32 jours et convient aux projets nécessitant un éventail de secteurs plus large.</p></div></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section-pad bg-copper text-ink" aria-labelledby="contact-title">
+      <div class="container-page grid gap-12 lg:grid-cols-[.9fr_1.1fr] lg:items-center lg:gap-20">
+        <div class="reveal">
+          <div class="inline-flex items-center gap-2 rounded-full bg-brick px-3 py-2 text-[11px] font-extrabold text-white"><span class="h-2 w-2 rounded-full bg-white"></span> Date limite: 10 septembre 2026</div>
+          <h2 id="contact-title" class="section-title mt-5">Votre place commence par une conversation.</h2>
+          <p class="mt-5 max-w-lg leading-relaxed text-[#3d2618]">Indiquez la formule qui vous intéresse. Votre demande ouvrira directement une conversation WhatsApp avec Guangz'Up Connect.</p>
+          <div class="mt-8 flex items-center gap-3 text-sm font-extrabold"><svg class="h-6 w-6" aria-hidden="true"><use href="#phone"></use></svg> +229 01 96 90 25 53</div>
+        </div>
+
+        <form id="lead-form" class="rounded-2xl bg-paper p-5 shadow-[0_24px_65px_rgba(69,35,16,.24)] sm:p-8" novalidate>
+          <div class="grid gap-5 sm:grid-cols-2">
+            <div class="sm:col-span-2"><label class="form-label" for="name">Nom complet</label><input class="form-field" id="name" name="name" autocomplete="name" required placeholder="Votre nom"></div>
+            <div><label class="form-label" for="phone-input">Téléphone / WhatsApp</label><input class="form-field" id="phone-input" name="phone" type="tel" autocomplete="tel" required placeholder="Ex. +229 01..." inputmode="tel"></div>
+            <div><label class="form-label" for="city">Ville</label><input class="form-field" id="city" name="city" autocomplete="address-level2" required placeholder="Ex. Cotonou"></div>
+            <div class="sm:col-span-2"><label class="form-label" for="option">Formule envisagée</label><select class="form-field" id="option" name="option" required><option value="">Choisir une formule</option><option>Option 01 — 2.600.000 FCFA</option><option>Option 02 — 3.700.000 FCFA</option><option>Je souhaite être conseillé(e)</option></select></div>
+          </div>
+          <p id="form-error" class="mt-4 hidden text-sm font-bold text-brick" role="alert">Renseignez votre nom, votre téléphone, votre ville et une formule.</p>
+          <button class="cta-primary mt-6 w-full !bg-ink !text-paper hover:!bg-[#2d2925]" type="submit">Envoyer ma demande sur WhatsApp <svg class="h-5 w-5" aria-hidden="true"><use href="#arrow"></use></svg></button>
+          <p class="mt-4 text-center text-xs leading-relaxed text-stone-600">Premier échange sans engagement. Vos informations servent uniquement à préparer votre demande.</p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t border-white/10 bg-ink py-12">
+    <div class="container-page grid gap-10 md:grid-cols-[1fr_auto] md:items-end">
+      <div>
+        <a href="#top" class="inline-flex items-center gap-3" aria-label="Guangz'Up Connect, retour en haut"><span class="brand-mark" aria-hidden="true"></span><span class="text-lg font-extrabold">GUANGZ'<span class="text-copperLight">UP</span> CONNECT</span></a>
+        <p class="mt-5 max-w-md text-sm leading-relaxed text-stone-500">Voyages d'affaires et accompagnement à la Canton Fair 2026, Guangzhou.</p>
+      </div>
+      <div class="text-sm md:text-right"><a class="font-extrabold text-copperLight" href="tel:+2290196902553">+229 01 96 90 25 53</a><p class="mt-3 text-stone-500">[Adresse · Email · Réseaux sociaux à ajouter]</p></div>
+    </div>
+    <div class="container-page mt-10 flex flex-col gap-2 border-t border-white/10 pt-6 text-xs text-stone-600 sm:flex-row sm:justify-between"><p>© 2026 Guangz'Up Connect</p><p>[RCCM, mentions légales et politique de confidentialité à compléter]</p></div>
+  </footer>
+
+  <div class="mobile-cta"><a class="cta-primary" href="https://wa.me/2290196902553?text=Bonjour%20Guangz%27Up%20Connect%2C%20je%20souhaite%20recevoir%20le%20programme%20Canton%20Fair%202026." target="_blank" rel="noopener">Parler sur WhatsApp <svg class="h-5 w-5" aria-hidden="true"><use href="#arrow"></use></svg></a></div>
+
+  <script>
+    const faqItems = document.querySelectorAll('.faq-item');
+    faqItems.forEach((item) => {
+      const button = item.querySelector('.faq-button');
+      button.addEventListener('click', () => {
+        const willOpen = !item.classList.contains('open');
+        faqItems.forEach((other) => {
+          other.classList.remove('open');
+          other.querySelector('.faq-button').setAttribute('aria-expanded', 'false');
+        });
+        if (willOpen) {
+          item.classList.add('open');
+          button.setAttribute('aria-expanded', 'true');
+        }
+      });
+    });
+
+    const form = document.getElementById('lead-form');
+    const formError = document.getElementById('form-error');
+    form.addEventListener('submit', (event) => {
+      event.preventDefault();
+      const data = new FormData(form);
+      const name = data.get('name').trim();
+      const phone = data.get('phone').trim();
+      const city = data.get('city').trim();
+      const option = data.get('option');
+      if (!name || !phone || !city || !option) {
+        formError.classList.remove('hidden');
+        form.querySelector(':invalid')?.focus();
+        return;
+      }
+      formError.classList.add('hidden');
+      const message = `Bonjour Guangz'Up Connect, je souhaite me préinscrire pour la Canton Fair 2026.\n\nNom : ${name}\nTéléphone : ${phone}\nVille : ${city}\nFormule : ${option}\n\nMerci de m'envoyer le programme détaillé et les conditions.`;
+      window.open(`https://wa.me/2290196902553?text=${encodeURIComponent(message)}`, '_blank', 'noopener');
+    });
+
+  </script>
+</body>
+</html>
