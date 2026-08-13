@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620 220" role="img" aria-labelledby="title desc">
+  <title id="title">Guangz'Up Connect</title>
+  <desc id="desc">Logo Guangz'Up Connect dans la palette cuivre et ivoire</desc>
+  <defs>
+    <linearGradient id="copper" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0" stop-color="#9c5427"/>
+      <stop offset=".52" stop-color="#c87941"/>
+      <stop offset="1" stop-color="#e5a36d"/>
+    </linearGradient>
+    <linearGradient id="ivory" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#fffaf2"/>
+      <stop offset="1" stop-color="#b8afa5"/>
+    </linearGradient>
+    <filter id="depth" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="5" stdDeviation="5" flood-color="#000" flood-opacity=".32"/>
+    </filter>
+  </defs>
+
+  <g transform="translate(16 13)" filter="url(#depth)">
+    <circle cx="92" cy="88" r="68" fill="none" stroke="url(#ivory)" stroke-width="4"/>
+    <ellipse cx="92" cy="88" rx="27" ry="68" fill="none" stroke="#b8afa5" stroke-width="3" transform="rotate(23 92 88)"/>
+    <ellipse cx="92" cy="88" rx="27" ry="68" fill="none" stroke="#b8afa5" stroke-width="3" transform="rotate(-34 92 88)"/>
+    <ellipse cx="92" cy="88" rx="68" ry="27" fill="none" stroke="#b8afa5" stroke-width="3" transform="rotate(-13 92 88)"/>
+
+    <g fill="#f2ece3" stroke="#665f58" stroke-width="2">
+      <circle cx="78" cy="22" r="8"/><circle cx="130" cy="38" r="8"/>
+      <circle cx="153" cy="96" r="8"/><circle cx="109" cy="152" r="8"/>
+      <circle cx="47" cy="142" r="8"/><circle cx="25" cy="82" r="8"/>
+    </g>
+    <g fill="#c87941" stroke="#e5a36d" stroke-width="2">
+      <circle cx="91" cy="65" r="11"/><circle cx="42" cy="112" r="9"/>
+    </g>
+
+    <path d="M20 144c27 23 63 22 91 3 18-12 30-28 39-45l-18-4 39-38-2 55-14-9c-11 28-30 52-57 68-34 20-73 18-96-4z" fill="url(#copper)"/>
+    <path d="M19 145c28 20 63 17 91-2" fill="none" stroke="#e5a36d" stroke-width="3" stroke-linecap="round" opacity=".75"/>
+  </g>
+
+  <path d="M200 38v148" stroke="#b8afa5" stroke-width="3"/>
+
+  <g transform="translate(225 48)">
+    <text x="0" y="63" font-family="Arial Narrow, Arial, sans-serif" font-size="66" font-weight="800" letter-spacing="-3"><tspan fill="#f2ece3">GUANGZ’</tspan><tspan fill="url(#copper)" font-weight="900">UP</tspan></text>
+
+    <path d="M2 91h50M346 91h43" stroke="#c87941" stroke-width="5"/>
+    <text x="69" y="105" fill="#f2ece3" font-family="Arial, sans-serif" font-size="31" font-weight="700" letter-spacing="12">CONNECT</text>
+
+    <text x="0" y="150" font-family="Arial, sans-serif" font-size="14" font-weight="800" letter-spacing=".35" textLength="388" lengthAdjust="spacingAndGlyphs"><tspan fill="#f2ece3">GLOBAL NETWORKS. </tspan><tspan fill="#e5a36d" font-weight="900">LIMITLESS OPPORTUNITIES.</tspan></text>
+  </g>
+</svg>

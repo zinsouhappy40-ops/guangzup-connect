@@ -3,33 +3,62 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Guangz'Up Connect vous accompagne à la Canton Fair 2026 à Guangzhou pour rencontrer des fournisseurs et développer vos achats en Chine.">
+  <meta name="description" content="Partez à la Canton Fair 2026 avec Guangz'Up Connect : fournisseurs, sourcing, négociation et accompagnement business à Guangzhou. Inscriptions avant le 10 septembre 2026.">
   <meta name="theme-color" content="#11100f">
-  <title>Canton Fair 2026 | Guangz'Up Connect</title>
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <link rel="canonical" href="https://guangzup-connect.vercel.app/">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Guangz'Up Connect">
+  <meta property="og:title" content="Canton Fair 2026 : revenez de Chine avec de vrais leviers de croissance">
+  <meta property="og:description" content="Rencontrez vos futurs fournisseurs à Guangzhou avec un accompagnement business complet. Deux formules dès 2 600 000 FCFA. Inscriptions avant le 10 septembre 2026.">
+  <meta property="og:url" content="https://guangzup-connect.vercel.app/">
+  <meta property="og:image" content="https://guangzup-connect.vercel.app/option02.webp">
+  <meta property="og:image:width" content="1024">
+  <meta property="og:image:height" content="1024">
+  <meta property="og:image:alt" content="Voyage d’affaires Guangz'Up Connect à la Canton Fair 2026">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Canton Fair 2026 avec Guangz'Up Connect">
+  <meta name="twitter:description" content="Fournisseurs, sourcing et négociation à Guangzhou. Choisissez votre formule avant le 10 septembre 2026.">
+  <meta name="twitter:image" content="https://guangzup-connect.vercel.app/option02.webp">
+  <title>Canton Fair 2026 à Guangzhou | Guangz'Up Connect</title>
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='28' fill='%2311100f' stroke='%23e5a36d' stroke-width='3'/%3E%3Cpath d='M16 35 31 17l17 14-12 2-5 15-4-11z' fill='%23c87941'/%3E%3C/svg%3E">
+  <link rel="preload" href="fond.webp" as="image" type="image/webp" fetchpriority="high">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Anton&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            ink: '#11100f',
-            coal: '#1a1917',
-            copper: '#c87941',
-            copperLight: '#e5a36d',
-            brick: '#8b2e28',
-            paper: '#f2ece3'
-          },
-          fontFamily: {
-            display: ['Anton', 'Impact', 'sans-serif'],
-            sans: ['Manrope', 'Arial', 'sans-serif']
-          }
+  <link rel="stylesheet" href="tailwind.min.css">
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "TravelAgency",
+      "name": "Guangz'Up Connect",
+      "url": "https://guangzup-connect.vercel.app/",
+      "email": "connectguangzhup@gmail.com",
+      "telephone": "+2290196902553",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Quartier Ahouassa, vers la mosquée d’Akpakpa",
+        "addressLocality": "Cotonou",
+        "addressCountry": "BJ"
+      },
+      "contactPoint": [
+        {
+          "@type": "ContactPoint",
+          "telephone": "+2290196902553",
+          "contactType": "customer service",
+          "areaServed": "BJ",
+          "availableLanguage": "French"
+        },
+        {
+          "@type": "ContactPoint",
+          "telephone": "+8618801140433",
+          "contactType": "customer service",
+          "areaServed": "CN",
+          "availableLanguage": "French"
         }
-      }
-    };
+      ]
+    }
   </script>
   <style>
     :root {
@@ -72,7 +101,7 @@
       position: absolute;
       inset: 0;
       z-index: -3;
-      background-image: url('fond.png');
+      background-image: url('fond.webp');
       background-size: cover;
       background-position: 72% 43%;
       filter: saturate(.84) contrast(1.05);
@@ -99,23 +128,13 @@
       margin-left: clamp(1rem, 7vw, 7rem);
     }
 
-    .brand-mark {
-      width: 42px;
-      aspect-ratio: 1;
-      position: relative;
-      border: 1px solid rgba(229, 163, 109, .65);
-      border-radius: 50%;
+    .official-logo {
+      width: clamp(190px, 18vw, 245px);
+      height: auto;
+      display: block;
+      border-radius: 3px;
     }
-    .brand-mark::before,
-    .brand-mark::after {
-      content: '';
-      position: absolute;
-      inset: 8px 3px;
-      border: 1px solid var(--copper-light);
-      border-radius: 50%;
-      transform: rotate(45deg);
-    }
-    .brand-mark::after { transform: rotate(-45deg); }
+    .official-logo-footer { width: min(220px, 72vw); }
 
     .cta-primary,
     .cta-secondary {
@@ -253,6 +272,32 @@
     .reveal { opacity: 1; transform: none; }
     .mobile-cta { display: none; }
 
+    .consent-banner {
+      position: fixed;
+      z-index: 50;
+      right: 1rem;
+      bottom: 1rem;
+      width: min(430px, calc(100% - 2rem));
+      padding: 1.15rem;
+      border: 1px solid rgba(229, 163, 109, .35);
+      border-radius: 14px;
+      color: var(--paper);
+      background: #191816;
+      box-shadow: 0 18px 45px rgba(0, 0, 0, .38);
+    }
+    .consent-banner[hidden] { display: none; }
+    .consent-actions { display: flex; gap: .65rem; margin-top: 1rem; }
+    .consent-button {
+      min-height: 44px;
+      flex: 1;
+      border: 1px solid rgba(242, 236, 227, .25);
+      border-radius: 8px;
+      padding: .7rem 1rem;
+      font-size: .78rem;
+      font-weight: 800;
+    }
+    .consent-button-primary { border-color: var(--copper-light); color: var(--ink); background: var(--copper-light); }
+
     @media (max-width: 900px) {
       .hero::before { background-position: 62% center; opacity: .75; }
       .hero::after { background: linear-gradient(90deg, rgba(8,8,8,.97) 0%, rgba(8,8,8,.82) 72%, rgba(8,8,8,.52) 100%), linear-gradient(0deg, #11100f 0%, transparent 35%); }
@@ -314,12 +359,8 @@
 
   <header class="absolute inset-x-0 top-0 z-20">
     <div class="container-page flex items-center justify-between border-b hairline py-4">
-      <a href="#top" class="flex items-center gap-3" aria-label="Guangz'Up Connect, retour en haut">
-        <span class="brand-mark" aria-hidden="true"></span>
-        <span class="leading-none">
-          <strong class="block text-base tracking-wide">GUANGZ'<span class="text-copperLight">UP</span></strong>
-          <span class="text-[9px] tracking-[.42em] text-stone-300">CONNECT</span>
-        </span>
+      <a href="#top" aria-label="Guangz'Up Connect, retour en haut">
+        <img class="official-logo" src="logo-brand.svg" width="620" height="220" alt="Guangz'Up Connect — Global Networks, Limitless Opportunities">
       </a>
       <nav class="hidden items-center gap-7 text-xs font-bold md:flex" aria-label="Navigation principale">
         <a class="transition-colors hover:text-copperLight" href="#phases">Les phases</a>
@@ -341,6 +382,7 @@
           <h1 class="hero-title display text-balance uppercase">Revenez de Chine avec de <span>vrais leviers</span> de croissance.</h1>
           <p class="mt-6 max-w-xl text-base leading-relaxed text-stone-200 md:text-lg">Accédez à la Canton Fair de Guangzhou avec un accompagnement pensé pour rencontrer des fournisseurs, mieux négocier et structurer vos achats.</p>
           <p class="mt-3 text-sm font-bold text-copperLight">Départ dès le 13 octobre 2026 · Guangzhou, Chine</p>
+          <p class="mt-2 text-xs font-semibold text-stone-300">Plus de 60 000 exposants, tous secteurs confondus</p>
           <div class="mt-8 flex flex-col gap-3 sm:flex-row">
             <a class="cta-primary" href="https://wa.me/2290196902553?text=Bonjour%20Guangz%27Up%20Connect%2C%20je%20souhaite%20recevoir%20le%20programme%20Canton%20Fair%202026." target="_blank" rel="noopener">
               Recevoir le programme
@@ -415,29 +457,29 @@
             <p class="section-kicker">Comprendre la Canton Fair</p>
             <h2 id="phases-title" class="section-title mt-4">Trois phases. Des secteurs différents.</h2>
           </div>
-          <p class="reveal text-sm leading-relaxed text-stone-400">Les dates de salon et familles de produits ci-dessous suivent le calendrier habituel de l'édition d'automne. Le programme détaillé 2026 vous sera confirmé avant l'inscription.</p>
+          <p class="reveal text-sm leading-relaxed text-stone-400">Le calendrier 2026 est confirmé : chaque phase réunit des familles de produits distinctes pour orienter votre choix selon votre secteur d’activité.</p>
         </div>
 
         <div class="phase-grid reveal">
           <article class="phase">
             <div class="flex items-start justify-between gap-4"><span class="phase-number">1</span><span class="rounded-full bg-copper px-3 py-2 text-[10px] font-extrabold text-ink">15–19 OCT.</span></div>
             <div>
-              <h3 class="display text-3xl text-copperLight">TECHNOLOGIE & INDUSTRIE</h3>
-              <ul class="sector-list mt-5 text-sm text-stone-300"><li>Électronique et électroménager</li><li>Équipements industriels</li><li>Véhicules, pièces et outillage</li></ul>
+              <h3 class="display text-3xl text-copperLight">INDUSTRIE & INNOVATION</h3>
+              <ul class="sector-list mt-5 text-sm text-stone-300"><li>Électronique et électroménager</li><li>Quincaillerie, outillage et industrie manufacturière</li><li>Véhicules et énergies nouvelles</li></ul>
             </div>
           </article>
           <article class="phase">
             <div class="flex items-start justify-between gap-4"><span class="phase-number">2</span><span class="rounded-full bg-copper px-3 py-2 text-[10px] font-extrabold text-ink">23–27 OCT.</span></div>
             <div>
-              <h3 class="display text-3xl text-copperLight">MAISON & AMÉNAGEMENT</h3>
-              <ul class="sector-list mt-5 text-sm text-stone-300"><li>Mobilier et décoration</li><li>Matériaux de construction</li><li>Articles ménagers et cadeaux</li></ul>
+              <h3 class="display text-3xl text-copperLight">CONSOMMATION & LIFESTYLE</h3>
+              <ul class="sector-list mt-5 text-sm text-stone-300"><li>Biens de consommation, cadeaux et décoration</li><li>Mobilier et articles de jardinage</li><li>Céramique</li></ul>
             </div>
           </article>
           <article class="phase">
             <div class="flex items-start justify-between gap-4"><span class="phase-number">3</span><span class="rounded-full bg-copper px-3 py-2 text-[10px] font-extrabold text-ink">31 OCT.–4 NOV.</span></div>
             <div>
-              <h3 class="display text-3xl text-copperLight">MODE & BIENS DE CONSOMMATION</h3>
-              <ul class="sector-list mt-5 text-sm text-stone-300"><li>Textile, vêtements et chaussures</li><li>Produits de santé et soins</li><li>Alimentaire, loisirs et bureau</li></ul>
+              <h3 class="display text-3xl text-copperLight">MODE, SANTÉ & ÉQUIPEMENTS</h3>
+              <ul class="sector-list mt-5 text-sm text-stone-300"><li>Textile, vêtements et chaussures</li><li>Alimentation, santé et dispositifs médicaux</li><li>Fournitures de bureau</li></ul>
             </div>
           </article>
         </div>
@@ -449,37 +491,40 @@
         <div class="mb-16 max-w-3xl reveal">
           <p class="section-kicker">Choisissez votre immersion</p>
           <h2 id="offres-title" class="section-title mt-4">Deux formats. Une même ambition.</h2>
-          <p class="mt-5 text-stone-400">Les deux formules incluent le vol, l'hôtel, le visa et l'accompagnement, conformément aux affiches officielles.</p>
+          <p class="mt-5 text-stone-400">L’Option 01 détaille ses prestations incluses. Pour l’Option 02, les prestations de séjour doivent être confirmées dans le devis avant l’inscription.</p>
         </div>
 
         <div class="offers-wrap">
           <article class="offer reveal">
-            <img class="offer-image" src="option01.png" width="768" height="768" alt="Affiche de l'Option 01, du 13 au 28 octobre 2026, phases 1 et 2, à 2 600 000 FCFA par personne">
+            <img class="offer-image" src="option01.webp" width="1024" height="1024" loading="lazy" decoding="async" alt="Affiche de l'Option 01, du 13 au 28 octobre 2026, phases 1 et 2, à 2 600 000 FCFA par personne">
             <div class="offer-body">
               <div class="flex items-start justify-between gap-4"><div><p class="text-xs font-extrabold uppercase tracking-[.16em] text-copperLight">Option 01</p><h3 class="mt-2 text-xl font-extrabold">L'essentiel en 16 jours</h3></div><span class="text-right text-xs leading-relaxed text-stone-400">13–28<br>octobre</span></div>
               <p class="offer-price mt-6">2.600.000 <small class="font-sans text-sm font-extrabold">FCFA</small></p>
               <p class="mt-1 text-xs text-stone-500">par personne</p>
               <div class="my-6 h-px bg-white/10"></div>
               <p class="offer-check">Phases 1 et 2 de la Canton Fair</p>
-              <p class="offer-check">Vol aller-retour</p>
-              <p class="offer-check">Hôtel et visa</p>
-              <p class="offer-check">Accompagnement Guangz'Up Connect</p>
+              <p class="offer-check">Billet d’avion, hébergement et visa</p>
+              <p class="offer-check">Mise en relation fournisseurs et sourcing</p>
+              <p class="offer-check">Accompagnement aux achats</p>
+              <p class="offer-check">Accompagnement dans l’organisation logistique</p>
+              <p class="mt-4 text-xs leading-relaxed text-stone-400">Le transport des marchandises achetées n’est pas automatiquement inclus.</p>
               <a class="cta-secondary mt-6 w-full" href="https://wa.me/2290196902553?text=Bonjour%2C%20je%20suis%20int%C3%A9ress%C3%A9%28e%29%20par%20l%27Option%2001%20%C3%A0%202.600.000%20FCFA.%20Pouvez-vous%20m%27envoyer%20le%20programme%20d%C3%A9taill%C3%A9%20%3F" target="_blank" rel="noopener">Choisir l'Option 01</a>
             </div>
           </article>
 
           <article class="offer featured reveal">
             <span class="recommended">Le plus complet</span>
-            <img class="offer-image" src="option02.png" width="768" height="768" alt="Affiche de l'Option 02, du 13 octobre au 13 novembre 2026, phases 1, 2 et 3, à 3 700 000 FCFA par personne">
+            <img class="offer-image" src="option02.webp" width="1024" height="1024" loading="lazy" decoding="async" alt="Affiche de l'Option 02, du 13 octobre au 13 novembre 2026, phases 1, 2 et 3, à 3 700 000 FCFA par personne">
             <div class="offer-body">
               <div class="flex items-start justify-between gap-4"><div><p class="text-xs font-extrabold uppercase tracking-[.16em] text-copperLight">Option 02</p><h3 class="mt-2 text-xl font-extrabold">L'expérience complète en 32 jours</h3></div><span class="text-right text-xs leading-relaxed text-stone-400">13 oct.–<br>13 nov.</span></div>
               <p class="offer-price mt-6">3.700.000 <small class="font-sans text-sm font-extrabold">FCFA</small></p>
               <p class="mt-1 text-xs text-stone-500">par personne</p>
               <div class="my-6 h-px bg-white/10"></div>
               <p class="offer-check">Phases 1, 2 et 3 de la Canton Fair</p>
-              <p class="offer-check">Vol aller-retour</p>
-              <p class="offer-check">Hôtel et visa</p>
-              <p class="offer-check">Accompagnement Guangz'Up Connect</p>
+              <p class="offer-check">Visites ciblées et rencontres professionnelles</p>
+              <p class="offer-check">Sourcing stratégique</p>
+              <p class="offer-check">Conseils et suivi business</p>
+              <p class="mt-4 rounded-lg bg-brick/20 p-3 text-xs font-bold leading-relaxed text-[#f0c8c2]">Billet, hébergement, visa et transport logistique : à confirmer dans le devis.</p>
               <a class="cta-primary mt-6 w-full" href="https://wa.me/2290196902553?text=Bonjour%2C%20je%20suis%20int%C3%A9ress%C3%A9%28e%29%20par%20l%27Option%2002%20%C3%A0%203.700.000%20FCFA.%20Pouvez-vous%20m%27envoyer%20le%20programme%20d%C3%A9taill%C3%A9%20%3F" target="_blank" rel="noopener">Choisir l'Option 02 <svg class="h-5 w-5" aria-hidden="true"><use href="#arrow"></use></svg></a>
             </div>
           </article>
@@ -489,10 +534,10 @@
           <div class="grid gap-7 md:grid-cols-[.7fr_1.3fr] md:items-start">
             <div><p class="section-kicker">Transparence</p><h3 class="mt-3 text-xl font-extrabold">Ce qui doit être précisé dans le devis</h3></div>
             <div class="grid gap-4 text-sm text-stone-300 sm:grid-cols-2">
-              <p class="flex gap-3"><span class="text-copperLight">○</span> Conditions et procédure en cas de refus de visa</p>
-              <p class="flex gap-3"><span class="text-copperLight">○</span> Type de chambre et conditions d'hébergement</p>
-              <p class="flex gap-3"><span class="text-copperLight">○</span> Modalités de paiement et échéancier éventuel</p>
-              <p class="flex gap-3"><span class="text-copperLight">○</span> Coûts et périmètre du transport de marchandises</p>
+              <p class="flex gap-3"><span class="text-copperLight">○</span> Frais non remboursables en cas de refus de visa</p>
+              <p class="flex gap-3"><span class="text-copperLight">○</span> Répartition des chambres et supplément individuel</p>
+              <p class="flex gap-3"><span class="text-copperLight">○</span> Échéancier de paiement applicable</p>
+              <p class="flex gap-3"><span class="text-copperLight">○</span> Prestations déjà engagées en cas d’annulation</p>
             </div>
           </div>
         </div>
@@ -517,9 +562,9 @@
         </div>
 
         <div class="mt-12 grid gap-px bg-white/10 md:grid-cols-3 reveal">
-          <div class="bg-[#151412] p-6"><p class="text-xs font-extrabold uppercase tracking-wider text-copperLight">Téléphone / WhatsApp</p><a class="mt-3 block font-extrabold hover:text-copperLight" href="tel:+2290196902553">+229 01 96 90 25 53</a></div>
-          <div class="bg-[#151412] p-6"><p class="text-xs font-extrabold uppercase tracking-wider text-copperLight">Adresse</p><p class="mt-3 text-sm text-stone-400">[Adresse complète à Cotonou à ajouter]</p></div>
-          <div class="bg-[#151412] p-6"><p class="text-xs font-extrabold uppercase tracking-wider text-copperLight">Email</p><p class="mt-3 text-sm text-stone-400">[Adresse email à ajouter]</p></div>
+          <div class="bg-[#151412] p-6"><p class="text-xs font-extrabold uppercase tracking-wider text-copperLight">Téléphone / WhatsApp</p><a class="mt-3 block font-extrabold hover:text-copperLight" href="tel:+2290196902553">Bénin : +229 01 96 90 25 53</a><a class="mt-2 block text-sm text-stone-400 transition-colors hover:text-copperLight" href="tel:+8618801140433">Chine : +86 188 0114 0433</a></div>
+          <div class="bg-[#151412] p-6"><p class="text-xs font-extrabold uppercase tracking-wider text-copperLight">Adresse</p><a class="mt-3 block text-sm leading-relaxed text-stone-400 transition-colors hover:text-copperLight" href="https://www.google.com/maps/search/?api=1&amp;query=Quartier%20Ahouassa%20Mosqu%C3%A9e%20Akpakpa%20Cotonou%20Benin" target="_blank" rel="noopener">Quartier Ahouassa, vers la mosquée d’Akpakpa, Cotonou, Bénin</a></div>
+          <div class="bg-[#151412] p-6"><p class="text-xs font-extrabold uppercase tracking-wider text-copperLight">Email</p><a class="mt-3 block break-all text-sm text-stone-400 transition-colors hover:text-copperLight" href="mailto:connectguangzhup@gmail.com">connectguangzhup@gmail.com</a></div>
         </div>
       </div>
     </section>
@@ -533,23 +578,31 @@
         <div class="reveal">
           <article class="faq-item open">
             <button class="faq-button" type="button" aria-expanded="true"><span>Le vol, l'hôtel et le visa sont-ils inclus ?</span><span class="faq-icon" aria-hidden="true">+</span></button>
-            <div class="faq-answer"><div><p class="pb-6 pr-8 text-sm leading-relaxed text-stone-600">Oui. Les affiches des Options 01 et 02 indiquent que le vol, l'hôtel, le visa et l'accompagnement sont inclus.</p></div></div>
+            <div class="faq-answer"><div><p class="pb-6 pr-8 text-sm leading-relaxed text-stone-600">Ces prestations sont explicitement incluses dans l’Option 01. Elles ne sont pas confirmées sur l’affiche de l’Option 02 et devront donc être détaillées dans le devis avant l’inscription.</p></div></div>
           </article>
           <article class="faq-item">
             <button class="faq-button" type="button" aria-expanded="false"><span>Que se passe-t-il si mon visa est refusé ?</span><span class="faq-icon" aria-hidden="true">+</span></button>
-            <div class="faq-answer"><div><p class="pb-6 pr-8 text-sm leading-relaxed text-stone-600">Les conditions de remboursement ou de report ne sont pas précisées dans les informations disponibles. Elles doivent figurer dans le devis et vous seront communiquées avant votre inscription.</p></div></div>
+            <div class="faq-answer"><div><p class="pb-6 pr-8 text-sm leading-relaxed text-stone-600">En cas de refus de visa, votre dossier est traité selon les conditions d’annulation et de remboursement de GUANGZ’UP CONNECT. Notre équipe vous accompagne dans les démarches et vous informe clairement des frais éventuellement non remboursables.</p></div></div>
           </article>
           <article class="faq-item">
             <button class="faq-button" type="button" aria-expanded="false"><span>Le transport de mes marchandises est-il compris ?</span><span class="faq-icon" aria-hidden="true">+</span></button>
-            <div class="faq-answer"><div><p class="pb-6 pr-8 text-sm leading-relaxed text-stone-600">L'accompagnement est inclus, mais le coût du transport de marchandises n'est pas confirmé comme inclus. Son périmètre et sa tarification seront précisés selon votre projet.</p></div></div>
+            <div class="faq-answer"><div><p class="pb-6 pr-8 text-sm leading-relaxed text-stone-600">Le prix de la participation concerne principalement le voyage et l’accompagnement du participant. Le transport des marchandises achetées auprès des fournisseurs n’est pas automatiquement inclus. Notre équipe peut toutefois vous accompagner dans l’organisation de leur acheminement.</p></div></div>
           </article>
           <article class="faq-item">
             <button class="faq-button" type="button" aria-expanded="false"><span>Combien de personnes partagent une chambre ?</span><span class="faq-icon" aria-hidden="true">+</span></button>
-            <div class="faq-answer"><div><p class="pb-6 pr-8 text-sm leading-relaxed text-stone-600">Le type d'occupation des chambres n'est pas indiqué sur les affiches. Cette information vous sera communiquée avec le programme détaillé.</p></div></div>
+            <div class="faq-answer"><div><p class="pb-6 pr-8 text-sm leading-relaxed text-stone-600">L’hébergement est organisé en chambre partagée, selon la formule retenue. La répartition est communiquée aux participants avant le départ. Une option individuelle peut être envisagée selon les disponibilités et les conditions tarifaires.</p></div></div>
           </article>
           <article class="faq-item">
             <button class="faq-button" type="button" aria-expanded="false"><span>Puis-je payer en plusieurs fois ?</span><span class="faq-icon" aria-hidden="true">+</span></button>
-            <div class="faq-answer"><div><p class="pb-6 pr-8 text-sm leading-relaxed text-stone-600">Les modalités de paiement ne sont pas encore précisées. Contactez Guangz'Up Connect pour connaître l'échéancier disponible, le cas échéant.</p></div></div>
+            <div class="faq-answer"><div><p class="pb-6 pr-8 text-sm leading-relaxed text-stone-600">Oui, un paiement échelonné peut être envisagé afin de faciliter la participation. Les modalités et échéances de paiement sont communiquées au moment de l’inscription.</p></div></div>
+          </article>
+          <article class="faq-item">
+            <button class="faq-button" type="button" aria-expanded="false"><span>Quelles sont les conditions d’annulation et de remboursement ?</span><span class="faq-icon" aria-hidden="true">+</span></button>
+            <div class="faq-answer"><div><p class="pb-6 pr-8 text-sm leading-relaxed text-stone-600">Les conditions d’annulation et de remboursement dépendent de la date d’annulation et des prestations déjà engagées. Les conditions applicables sont communiquées au participant avant la validation définitive de son inscription.</p></div></div>
+          </article>
+          <article class="faq-item">
+            <button class="faq-button" type="button" aria-expanded="false"><span>Quelles dépenses ne sont pas incluses ?</span><span class="faq-icon" aria-hidden="true">+</span></button>
+            <div class="faq-answer"><div><p class="pb-6 pr-8 text-sm leading-relaxed text-stone-600">Sauf indication contraire dans votre formule, les dépenses personnelles et les achats effectués auprès des fournisseurs restent à votre charge. Cela peut notamment concerner les marchandises achetées, leur transport, les dépenses personnelles et les frais supplémentaires non prévus dans la formule.</p></div></div>
           </article>
           <article class="faq-item">
             <button class="faq-button" type="button" aria-expanded="false"><span>Quelle formule choisir ?</span><span class="faq-icon" aria-hidden="true">+</span></button>
@@ -586,17 +639,82 @@
   <footer class="border-t border-white/10 bg-ink py-12">
     <div class="container-page grid gap-10 md:grid-cols-[1fr_auto] md:items-end">
       <div>
-        <a href="#top" class="inline-flex items-center gap-3" aria-label="Guangz'Up Connect, retour en haut"><span class="brand-mark" aria-hidden="true"></span><span class="text-lg font-extrabold">GUANGZ'<span class="text-copperLight">UP</span> CONNECT</span></a>
+        <a href="#top" class="inline-block" aria-label="Guangz'Up Connect, retour en haut"><img class="official-logo official-logo-footer" src="logo-brand.svg" width="620" height="220" alt="Guangz'Up Connect — Global Networks, Limitless Opportunities"></a>
         <p class="mt-5 max-w-md text-sm leading-relaxed text-stone-500">Voyages d'affaires et accompagnement à la Canton Fair 2026, Guangzhou.</p>
       </div>
-      <div class="text-sm md:text-right"><a class="font-extrabold text-copperLight" href="tel:+2290196902553">+229 01 96 90 25 53</a><p class="mt-3 text-stone-500">[Adresse · Email · Réseaux sociaux à ajouter]</p></div>
+      <div class="text-sm md:text-right"><a class="font-extrabold text-copperLight" href="tel:+2290196902553">Bénin : +229 01 96 90 25 53</a><a class="mt-2 block text-stone-500 transition-colors hover:text-copperLight" href="tel:+8618801140433">Chine : +86 188 0114 0433</a><a class="mt-3 block text-stone-500 transition-colors hover:text-copperLight" href="mailto:connectguangzhup@gmail.com">connectguangzhup@gmail.com</a><a class="mt-2 block max-w-sm leading-relaxed text-stone-500 transition-colors hover:text-copperLight md:ml-auto" href="https://www.google.com/maps/search/?api=1&amp;query=Quartier%20Ahouassa%20Mosqu%C3%A9e%20Akpakpa%20Cotonou%20Benin" target="_blank" rel="noopener">Quartier Ahouassa, vers la mosquée d’Akpakpa, Cotonou, Bénin</a></div>
     </div>
     <div class="container-page mt-10 flex flex-col gap-2 border-t border-white/10 pt-6 text-xs text-stone-600 sm:flex-row sm:justify-between"><p>© 2026 Guangz'Up Connect</p><p>[RCCM, mentions légales et politique de confidentialité à compléter]</p></div>
   </footer>
 
   <div class="mobile-cta"><a class="cta-primary" href="https://wa.me/2290196902553?text=Bonjour%20Guangz%27Up%20Connect%2C%20je%20souhaite%20recevoir%20le%20programme%20Canton%20Fair%202026." target="_blank" rel="noopener">Parler sur WhatsApp <svg class="h-5 w-5" aria-hidden="true"><use href="#arrow"></use></svg></a></div>
 
+  <aside id="consent-banner" class="consent-banner" aria-labelledby="consent-title" hidden>
+    <p id="consent-title" class="text-sm font-extrabold">Mesure d’audience</p>
+    <p class="mt-2 text-xs leading-relaxed text-stone-400">Avec votre accord, Google Analytics et Meta Pixel nous aident à mesurer les visites, les clics WhatsApp et les demandes de contact.</p>
+    <div class="consent-actions">
+      <button id="consent-reject" class="consent-button" type="button">Refuser</button>
+      <button id="consent-accept" class="consent-button consent-button-primary" type="button">Accepter</button>
+    </div>
+  </aside>
+
   <script>
+    // À remplacer par les identifiants créés dans Google Analytics et Meta Business.
+    const GA_MEASUREMENT_ID = '';
+    const META_PIXEL_ID = '';
+
+    function trackersConfigured() {
+      return GA_MEASUREMENT_ID.startsWith('G-') || /^\d{5,}$/.test(META_PIXEL_ID);
+    }
+
+    function loadTrackers() {
+      if (GA_MEASUREMENT_ID.startsWith('G-')) {
+        window.dataLayer = window.dataLayer || [];
+        window.gtag = function () { window.dataLayer.push(arguments); };
+        window.gtag('js', new Date());
+        window.gtag('config', GA_MEASUREMENT_ID, { anonymize_ip: true });
+        const analyticsScript = document.createElement('script');
+        analyticsScript.async = true;
+        analyticsScript.src = `https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`;
+        document.head.appendChild(analyticsScript);
+      }
+
+      if (/^\d{5,}$/.test(META_PIXEL_ID)) {
+        !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+        n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}
+        (window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+        window.fbq('init', META_PIXEL_ID);
+        window.fbq('track', 'PageView');
+      }
+    }
+
+    function trackConversion(eventName) {
+      if (typeof window.gtag === 'function') window.gtag('event', eventName);
+      if (typeof window.fbq === 'function') window.fbq('track', eventName === 'lead_form_submit' ? 'Lead' : 'Contact');
+    }
+
+    const consentBanner = document.getElementById('consent-banner');
+    if (trackersConfigured()) {
+      const consent = localStorage.getItem('guangzup_tracking_consent');
+      if (consent === 'accepted') loadTrackers();
+      if (!consent) consentBanner.hidden = false;
+    }
+    document.getElementById('consent-accept').addEventListener('click', () => {
+      localStorage.setItem('guangzup_tracking_consent', 'accepted');
+      consentBanner.hidden = true;
+      loadTrackers();
+    });
+    document.getElementById('consent-reject').addEventListener('click', () => {
+      localStorage.setItem('guangzup_tracking_consent', 'rejected');
+      consentBanner.hidden = true;
+    });
+
+    document.querySelectorAll('a[href*="wa.me"]').forEach((link) => {
+      link.addEventListener('click', () => trackConversion('whatsapp_click'));
+    });
+
     const faqItems = document.querySelectorAll('.faq-item');
     faqItems.forEach((item) => {
       const button = item.querySelector('.faq-button');
@@ -628,6 +746,7 @@
         return;
       }
       formError.classList.add('hidden');
+      trackConversion('lead_form_submit');
       const message = `Bonjour Guangz'Up Connect, je souhaite me préinscrire pour la Canton Fair 2026.\n\nNom : ${name}\nTéléphone : ${phone}\nVille : ${city}\nFormule : ${option}\n\nMerci de m'envoyer le programme détaillé et les conditions.`;
       window.open(`https://wa.me/2290196902553?text=${encodeURIComponent(message)}`, '_blank', 'noopener');
     });
