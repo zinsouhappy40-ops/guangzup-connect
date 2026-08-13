@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://guangzup-connect.vercel.app/sitemap.xml
