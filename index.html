@@ -346,6 +346,64 @@
     .reveal { opacity: 1; transform: none; }
     .mobile-cta { display: none; }
 
+    .mobile-menu-button {
+      width: 46px;
+      height: 46px;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid rgba(229, 163, 109, .38);
+      border-radius: 10px;
+      color: var(--paper);
+      background: rgba(17, 16, 15, .72);
+    }
+    .mobile-menu-icon,
+    .mobile-menu-icon::before,
+    .mobile-menu-icon::after {
+      width: 20px;
+      height: 1.5px;
+      display: block;
+      position: relative;
+      background: currentColor;
+      transition: transform .22s ease, opacity .22s ease;
+    }
+    .mobile-menu-icon::before,
+    .mobile-menu-icon::after {
+      content: '';
+      position: absolute;
+      left: 0;
+    }
+    .mobile-menu-icon::before { top: -6px; }
+    .mobile-menu-icon::after { top: 6px; }
+    .mobile-menu-button.is-open .mobile-menu-icon { background: transparent; }
+    .mobile-menu-button.is-open .mobile-menu-icon::before { top: 0; transform: rotate(45deg); }
+    .mobile-menu-button.is-open .mobile-menu-icon::after { top: 0; transform: rotate(-45deg); }
+    .mobile-menu-panel {
+      position: absolute;
+      top: calc(100% + .5rem);
+      left: .625rem;
+      right: .625rem;
+      padding: .5rem;
+      border: 1px solid rgba(229, 163, 109, .3);
+      border-radius: 14px;
+      background: #171614;
+      box-shadow: 0 20px 45px rgba(0, 0, 0, .42);
+    }
+    .mobile-menu-panel[hidden] { display: none; }
+    .mobile-menu-link {
+      min-height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: .8rem 1rem;
+      border-bottom: 1px solid rgba(242, 236, 227, .08);
+      color: var(--paper);
+      font-size: .86rem;
+      font-weight: 800;
+    }
+    .mobile-menu-link:last-child { border-bottom: 0; color: var(--copper-light); }
+    .mobile-menu-link::after { content: '→'; color: var(--copper-light); }
+
     .consent-banner {
       position: fixed;
       z-index: 50;
@@ -409,6 +467,10 @@
       footer { padding-bottom: 6.5rem !important; }
     }
 
+    @media (max-width: 767px) {
+      .mobile-menu-button { display: inline-flex; }
+    }
+
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
       *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; }
@@ -442,7 +504,16 @@
         <a class="transition-colors hover:text-copperLight" href="#faq">FAQ</a>
       </nav>
       <a class="hidden text-sm font-extrabold text-copperLight sm:block" href="tel:+2290196902553">+229 01 96 90 25 53</a>
+      <button id="mobile-menu-button" class="mobile-menu-button" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Ouvrir le menu">
+        <span class="mobile-menu-icon" aria-hidden="true"></span>
+      </button>
     </div>
+    <nav id="mobile-menu" class="mobile-menu-panel" aria-label="Navigation mobile" hidden>
+      <a class="mobile-menu-link" href="#phases">Les phases</a>
+      <a class="mobile-menu-link" href="#offres">Les formules</a>
+      <a class="mobile-menu-link" href="#faq">Questions fréquentes</a>
+      <a class="mobile-menu-link" href="#contact">Préinscription</a>
+    </nav>
   </header>
 
   <main id="top">
@@ -790,6 +861,29 @@
 
     document.querySelectorAll('a[href*="wa.me"]').forEach((link) => {
       link.addEventListener('click', () => trackConversion('whatsapp_click'));
+    });
+
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    function closeMobileMenu() {
+      mobileMenu.hidden = true;
+      mobileMenuButton.classList.remove('is-open');
+      mobileMenuButton.setAttribute('aria-expanded', 'false');
+      mobileMenuButton.setAttribute('aria-label', 'Ouvrir le menu');
+    }
+    mobileMenuButton.addEventListener('click', () => {
+      const willOpen = mobileMenu.hidden;
+      mobileMenu.hidden = !willOpen;
+      mobileMenuButton.classList.toggle('is-open', willOpen);
+      mobileMenuButton.setAttribute('aria-expanded', String(willOpen));
+      mobileMenuButton.setAttribute('aria-label', willOpen ? 'Fermer le menu' : 'Ouvrir le menu');
+    });
+    mobileMenu.querySelectorAll('a').forEach((link) => link.addEventListener('click', closeMobileMenu));
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape') {
+        closeMobileMenu();
+        mobileMenuButton.focus();
+      }
     });
 
     const faqItems = document.querySelectorAll('.faq-item');
